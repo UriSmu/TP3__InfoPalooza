@@ -11,6 +11,79 @@ public static class Ticketera
 
     public static int AgregarCliente(Cliente client)
     {
-        
+        UltimoIdEntrada++;
+        DicClientes.Add(UltimoIdEntrada, client);
+        return UltimoIdEntrada;
     }
+
+    public static Cliente BuscarCliente(int id)
+    {
+        Cliente client = new Cliente();
+        
+        if(DicClientes.ContainsKey(id))
+        {
+            client = DicClientes[id];
+        }
+        else
+        {
+            client = null;
+        }
+
+        return client;
+    }
+
+    public static bool CambiarEntrada(int id, int tipo, int cantidad)
+    {
+        bool a = false;
+
+        if(DicClientes.ContainsKey(id))
+        {
+            Cliente client = DicClientes[id];
+            double importeAnterior = client.TipoEntrada * client.Cantidad;
+            double importeNuevo = tipo * cantidad;
+            if(importeNuevo > importeAnterior)
+            {
+                a = true;
+                client.TipoEntrada = tipo;
+                client.Cantidad = cantidad;
+                DicClientes[id] = client;
+            }
+        }
+
+        return a;
+    }
+
+    public static List<string> EstadisticasTicketera()
+    {
+        List<string> Estadisticas = new List<string>();
+
+        if(DicClientes.Count() != 0)
+        {
+            //SE TOMA COMO CLIENTES PARA "INSCRIPTOS" Y "CANT. QUE COMPRO C/ ENTRADA", ÚNICAMENTE A LOS QUE INGRESAN SU DNI, NOMBRE Y APELLIDO (NO SE TOMA LA CANTIDAD DE ENTRADAS VENDIDAS)
+            Estadisticas.Add("Cantidad de Clientes inscriptos = " + DicClientes.Count());
+            
+            int[] cantPorTipoClientes = new int[4];
+            int[] cantPorTipoTotal = new int[4];
+            int totalEntradas = 0;
+            foreach (Cliente client in DicClientes.Values)
+            {
+                cantPorTipoClientes[client.TipoEntrada]++;
+                cantPorTipoTotal[client.TipoEntrada] *= client.Cantidad;
+                totalEntradas += client.Cantidad;
+            }
+            Estadisticas.Add("Cantidad de Clientes que compraron cada entrada - Tipo 1: " + cantPorTipoClientes[0] + " | Tipo 2: " + cantPorTipoClientes[1] + " | Tipo 3: " + cantPorTipoClientes[2] + " | Tipo 4: " + cantPorTipoClientes[3]);
+            
+            Estadisticas.Add("Porcentaje de cantidad de entradas vendidas diferenciadas por tipo de entrada respecto al total de entradas compradas - Tipo 1: " + cantPorTipoTotal[0]/totalEntradas + "% | Tipo 2: " + cantPorTipoTotal[1]/totalEntradas + "% | Tipo 3: " + cantPorTipoTotal[2]/totalEntradas + "% | Tipo 4: " + cantPorTipoTotal[3]/totalEntradas + "%");
+
+            
+            int[] valorCadaTipo = new int[4]{45000, 60000, 30000, 100000};
+
+            Estadisticas.Add("Recaudación de cada tipo - Tipo 1: $" + valorCadaTipo[0]*cantPorTipoTotal[0] + " | Tipo 2: $" + valorCadaTipo[1]*cantPorTipoTotal[1] + " | Tipo 3: $" + valorCadaTipo[2]*cantPorTipoTotal[2] + " | Tipo 4: $" + valorCadaTipo[3]*cantPorTipoTotal[3]);
+            Estadisticas.Add("Recaudación total: " + (valorCadaTipo[0]*cantPorTipoTotal[0] + valorCadaTipo[1]*cantPorTipoTotal[1] + valorCadaTipo[2]*cantPorTipoTotal[2] + valorCadaTipo[3]*cantPorTipoTotal[3]));
+        }
+
+        return Estadisticas;
+
+        //DEVUELVE LA LISTA "Estadisticas". SI "DicClientes" ESTÁ VACÍO, LA LISTA LO ESTARÁ TAMBIÉN, Y LUEGO EN EL MAIN DEVUELVE EL MENSAJE "Aún no se anotó nadie"
+    } 
 }

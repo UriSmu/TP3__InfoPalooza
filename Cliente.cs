@@ -1,4 +1,4 @@
-class Cliente
+public class Cliente
 {
     public int DNI {get; private set;}
     public string Apellido {get; private set;}
