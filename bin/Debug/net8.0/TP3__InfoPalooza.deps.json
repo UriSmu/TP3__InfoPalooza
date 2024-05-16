@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "TP3__InfoPalooza/1.0.0": {
+        "runtime": {
+          "TP3__InfoPalooza.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "TP3__InfoPalooza/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

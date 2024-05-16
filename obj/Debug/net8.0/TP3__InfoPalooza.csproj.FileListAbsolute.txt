@@ -1,0 +1,15 @@
+Z:\4to\Programación\TP3__InfoPalooza\bin\Debug\net8.0\TP3__InfoPalooza.exe
+Z:\4to\Programación\TP3__InfoPalooza\bin\Debug\net8.0\TP3__InfoPalooza.deps.json
+Z:\4to\Programación\TP3__InfoPalooza\bin\Debug\net8.0\TP3__InfoPalooza.runtimeconfig.json
+Z:\4to\Programación\TP3__InfoPalooza\bin\Debug\net8.0\TP3__InfoPalooza.dll
+Z:\4to\Programación\TP3__InfoPalooza\bin\Debug\net8.0\TP3__InfoPalooza.pdb
+Z:\4to\Programación\TP3__InfoPalooza\obj\Debug\net8.0\TP3__InfoPalooza.GeneratedMSBuildEditorConfig.editorconfig
+Z:\4to\Programación\TP3__InfoPalooza\obj\Debug\net8.0\TP3__InfoPalooza.AssemblyInfoInputs.cache
+Z:\4to\Programación\TP3__InfoPalooza\obj\Debug\net8.0\TP3__InfoPalooza.AssemblyInfo.cs
+Z:\4to\Programación\TP3__InfoPalooza\obj\Debug\net8.0\TP3__InfoPalooza.csproj.CoreCompileInputs.cache
+Z:\4to\Programación\TP3__InfoPalooza\obj\Debug\net8.0\TP3__InfoPalooza.sourcelink.json
+Z:\4to\Programación\TP3__InfoPalooza\obj\Debug\net8.0\TP3__InfoPalooza.dll
+Z:\4to\Programación\TP3__InfoPalooza\obj\Debug\net8.0\refint\TP3__InfoPalooza.dll
+Z:\4to\Programación\TP3__InfoPalooza\obj\Debug\net8.0\TP3__InfoPalooza.pdb
+Z:\4to\Programación\TP3__InfoPalooza\obj\Debug\net8.0\TP3__InfoPalooza.genruntimeconfig.cache
+Z:\4to\Programación\TP3__InfoPalooza\obj\Debug\net8.0\ref\TP3__InfoPalooza.dll

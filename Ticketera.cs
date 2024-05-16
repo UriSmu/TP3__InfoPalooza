@@ -60,26 +60,26 @@ public static class Ticketera
         if(DicClientes.Count() != 0)
         {
             //SE TOMA COMO CLIENTES PARA "INSCRIPTOS" Y "CANT. QUE COMPRO C/ ENTRADA", ÚNICAMENTE A LOS QUE INGRESAN SU DNI, NOMBRE Y APELLIDO (NO SE TOMA LA CANTIDAD DE ENTRADAS VENDIDAS)
-            Estadisticas.Add("Cantidad de Clientes inscriptos = " + DicClientes.Count());
+            Estadisticas.Add("Cantidad de Clientes inscriptos: " + DicClientes.Count());
             
-            int[] cantPorTipoClientes = new int[4];
-            int[] cantPorTipoTotal = new int[4];
+            int[] cantPorTipoClientes = new int[5]{0, 0, 0, 0, 0};
+            int[] cantPorTipoTotal = new int[5]{0, 0, 0, 0, 0};
             int totalEntradas = 0;
             foreach (Cliente client in DicClientes.Values)
             {
                 cantPorTipoClientes[client.TipoEntrada]++;
-                cantPorTipoTotal[client.TipoEntrada] *= client.Cantidad;
+                cantPorTipoTotal[client.TipoEntrada]+= client.Cantidad;
                 totalEntradas += client.Cantidad;
             }
-            Estadisticas.Add("Cantidad de Clientes que compraron cada entrada - Tipo 1: " + cantPorTipoClientes[0] + " | Tipo 2: " + cantPorTipoClientes[1] + " | Tipo 3: " + cantPorTipoClientes[2] + " | Tipo 4: " + cantPorTipoClientes[3]);
+            Estadisticas.Add("Cantidad de Clientes que compraron cada entrada - Tipo 1: " + cantPorTipoClientes[1] + " | Tipo 2: " + cantPorTipoClientes[2] + " | Tipo 3: " + cantPorTipoClientes[3] + " | Tipo 4: " + cantPorTipoClientes[4]);
             
-            Estadisticas.Add("Porcentaje de cantidad de entradas vendidas diferenciadas por tipo de entrada respecto al total de entradas compradas - Tipo 1: " + cantPorTipoTotal[0]/totalEntradas + "% | Tipo 2: " + cantPorTipoTotal[1]/totalEntradas + "% | Tipo 3: " + cantPorTipoTotal[2]/totalEntradas + "% | Tipo 4: " + cantPorTipoTotal[3]/totalEntradas + "%");
+            Estadisticas.Add("Porcentaje de cantidad de entradas vendidas diferenciadas por tipo de entrada respecto al total de entradas compradas - Tipo 1: " + (cantPorTipoTotal[1]/totalEntradas)*100 + "% | Tipo 2: " + (cantPorTipoTotal[2]/totalEntradas)*100 + "% | Tipo 3: " + (cantPorTipoTotal[3]/totalEntradas)*100 + "% | Tipo 4: " + (cantPorTipoTotal[4]/totalEntradas)*100 + "%");
 
             
-            int[] valorCadaTipo = new int[4]{45000, 60000, 30000, 100000};
+            int[] valorCadaTipo = new int[5]{0, 45000, 60000, 30000, 100000};
 
-            Estadisticas.Add("Recaudación de cada tipo - Tipo 1: $" + valorCadaTipo[0]*cantPorTipoTotal[0] + " | Tipo 2: $" + valorCadaTipo[1]*cantPorTipoTotal[1] + " | Tipo 3: $" + valorCadaTipo[2]*cantPorTipoTotal[2] + " | Tipo 4: $" + valorCadaTipo[3]*cantPorTipoTotal[3]);
-            Estadisticas.Add("Recaudación total: " + (valorCadaTipo[0]*cantPorTipoTotal[0] + valorCadaTipo[1]*cantPorTipoTotal[1] + valorCadaTipo[2]*cantPorTipoTotal[2] + valorCadaTipo[3]*cantPorTipoTotal[3]));
+            Estadisticas.Add("Recaudación de cada tipo - Tipo 1: $" + valorCadaTipo[1]*cantPorTipoTotal[1] + " | Tipo 2: $" + valorCadaTipo[2]*cantPorTipoTotal[2] + " | Tipo 3: $" + valorCadaTipo[3]*cantPorTipoTotal[3] + " | Tipo 4: $" + valorCadaTipo[4]*cantPorTipoTotal[4]);
+            Estadisticas.Add("Recaudación total: " + (valorCadaTipo[1]*cantPorTipoTotal[1] + valorCadaTipo[2]*cantPorTipoTotal[2] + valorCadaTipo[3]*cantPorTipoTotal[3] + valorCadaTipo[4]*cantPorTipoTotal[4]));
         }
 
         return Estadisticas;

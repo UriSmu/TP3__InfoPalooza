@@ -80,7 +80,7 @@ class Program
             Console.WriteLine("3. Día 3, valor a abonar $30000");
             Console.WriteLine("4. Full Pass, valor a abonar $100000");
             esInt = int.TryParse(Console.ReadLine(), out tipo);
-        }while(!esInt || !(tipo < 1 && tipo > 4));
+        }while(!esInt && (tipo < 1 && tipo > 4));
 
         esInt = false;
         do
@@ -160,7 +160,7 @@ class Program
             Console.WriteLine("3. Día 3, valor a abonar $30000");
             Console.WriteLine("4. Full Pass, valor a abonar $100000");
             esInt = int.TryParse(Console.ReadLine(), out tipo);
-        }while(!esInt || !(tipo < 1 && tipo > 4));
+        }while(!esInt && (tipo < 1 && tipo > 4));
 
         esInt = false;
         do
