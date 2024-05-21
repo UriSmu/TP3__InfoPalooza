@@ -73,7 +73,7 @@ public static class Ticketera
             }
             Estadisticas.Add("Cantidad de Clientes que compraron cada entrada - Tipo 1: " + cantPorTipoClientes[1] + " | Tipo 2: " + cantPorTipoClientes[2] + " | Tipo 3: " + cantPorTipoClientes[3] + " | Tipo 4: " + cantPorTipoClientes[4]);
             
-            Estadisticas.Add("Porcentaje de cantidad de entradas vendidas diferenciadas por tipo de entrada respecto al total de entradas compradas - Tipo 1: " + (cantPorTipoTotal[1]/totalEntradas)*100 + "% | Tipo 2: " + (cantPorTipoTotal[2]/totalEntradas)*100 + "% | Tipo 3: " + (cantPorTipoTotal[3]/totalEntradas)*100 + "% | Tipo 4: " + (cantPorTipoTotal[4]/totalEntradas)*100 + "%");
+            Estadisticas.Add("Porcentaje de cantidad de entradas vendidas diferenciadas por tipo de entrada respecto al total de entradas compradas - Tipo 1: " + cantPorTipoTotal[1]*100/totalEntradas + "% | Tipo 2: " + cantPorTipoTotal[2]*100/totalEntradas + "% | Tipo 3: " + cantPorTipoTotal[3]*100/totalEntradas + "% | Tipo 4: " + cantPorTipoTotal[4]*100/totalEntradas + "%");
 
             
             int[] valorCadaTipo = new int[5]{0, 45000, 60000, 30000, 100000};
